@@ -1,0 +1,28 @@
+{
+   "name": "GPC helper",
+   "description": "Enable Global Privacy Control signal on Google Chrome.",
+   "version": "0.1.0",
+   "manifest_version": 2,
+   "icons": {
+      "16": "icon-16.png",
+      "32": "icon-32.png",
+      "96": "icon-96.png"
+   },
+
+   "options_ui": {
+      "page": "options.html",
+      "open_in_tab": true
+   },
+
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "content_scripts": [ {
+      "js": [ "document_start.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   } ],
+   
+   "permissions": [ "storage", "webRequest", "webRequestBlocking", "\u003Call_urls>" ]
+   
+}
